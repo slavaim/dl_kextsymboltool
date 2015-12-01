@@ -1,7 +1,7 @@
 # dl_kextsymboltool
 A tool for proxy kernel extensions generation.
 
-The tool is used to generate a proxy kext for Mac OS X to export kernel symbols/functions that is not available via Apple provided proxy drivers com.apple.kpi.bsd , com.apple.kpi.dsep , com.apple.kpi.iokit , com.apple.kpi.libkern , com.apple.kpi.mach , com.apple.kpi.private , com.apple.kpi.unsupported .
+The tool is used to generate a proxy kext for Mac OS X to export kernel symbols/functions which are not available via Apple provided proxy drivers com.apple.kpi.bsd , com.apple.kpi.dsep , com.apple.kpi.iokit , com.apple.kpi.libkern , com.apple.kpi.mach , com.apple.kpi.private , com.apple.kpi.unsupported .
 
 For example to get access to mac_proc_set_enforce , proc_iterate , proc_lock , proc_unlock run the following script. The generated binary file should be places in kext bundle's Contents/MacOS folder, you also need Contents/Info.plist as for any regular kernel extension( for example look at Info.plist in any of the Apple's proxy kernel extensions ). This kext bundle should be declared as a dependency in OSBundleLibraries for a kernel extension using the exported functions, if you use     kextload/kextutil use -d flag to declare dependency on load.
 
