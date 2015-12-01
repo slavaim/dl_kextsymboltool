@@ -1,5 +1,5 @@
 # dl_kextsymboltool
-A tool for proxy kernel extensions generation
+A tool for proxy kernel extensions generation.
 
 The tool is used to generate a proxy driver for Mac OS X to export kernel symbols/functions that is not available via Apple provided proxy drivers com.apple.kpi.bsd , com.apple.kpi.dsep , com.apple.kpi.iokit , com.apple.kpi.libkern , com.apple.kpi.mach , com.apple.kpi.private , com.apple.kpi.unsupported .
 
