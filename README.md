@@ -8,7 +8,10 @@ For example to get access to mac_proc_set_enforce , proc_iterate , proc_lock , p
     
      #!/bin/bash
      NAME=/work/MyProxyKernelExtension  
-     nm -gj /mach_kernel > allsymbols  
+     # old MacOS X placed the kernel in the root directory
+     # nm -gj /mach_kernel > allsymbols  
+     # on the lates macOS the kernel can be found at /System/Library/Kernels
+     nm -gj /System/Library/Kernels/kernel > allsymbols 
      echo "_mac_proc_set_enforce" > ${NAME}.exports  
      echo "_proc_iterate" >> ${NAME}.exports  
      echo "_proc_lock" >> ${NAME}.exports  
